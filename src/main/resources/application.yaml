@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: exam_companion_agent_embabel
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: false
+server:
+  port: 8080
+
+
+
+logging:
+  pattern:
+    console: '%clr(%d{HH:mm:ss.SSS}){faint} %clr([%t]){magenta} %clr(%-5level) %clr(%logger{0}){cyan} %clr(-){faint} %msg%n'
+  level:
+    com.embabel.agent.core.ActionRunner: DEBUG
+    com.embabel.agent.config.models.DockerLocalModels: DEBUG
+    com.embabel.agent.web.sse.SSEController: INFO
+    com.embabel.agent.tools.mcp: DEBUG
