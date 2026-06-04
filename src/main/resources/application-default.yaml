@@ -1,0 +1,9 @@
+wiki:
+  llm: 'qwen3:latest'
+
+embabel:
+  models:
+    default-llm: 'qwen3:latest'
+    llms:
+      best: 'qwen3:latest'
+      cheapest: 'qwen3:latest'
