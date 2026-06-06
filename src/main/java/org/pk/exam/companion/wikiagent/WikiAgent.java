@@ -1,28 +1,21 @@
-package org.pk.exam.companion;
+package org.pk.exam.companion.wikiagent;
 
 import com.embabel.agent.api.annotation.*;
 import com.embabel.agent.api.common.OperationContext;
 import com.embabel.agent.core.CoreToolGroups;
 import com.embabel.agent.core.hitl.WaitFor;
 import com.embabel.common.ai.model.LlmOptions;
+import org.pk.exam.companion.wikiagent.records.FocusArea;
+import org.pk.exam.companion.wikiagent.records.FocusAreas;
+import org.pk.exam.companion.wikiagent.records.ResearchReport;
+import org.pk.exam.companion.wikiagent.records.ResearchSubject;
 import org.springframework.beans.factory.annotation.Value;
 
-import java.util.List;
 import java.util.stream.Collectors;
 
-record FocusAreas(List<FocusArea> focusAreas) {
-}
-
-record FocusArea(String topic) {
-}
-
-record ResearchReport(String subject, String summary) {
-}
-
-record ResearchSubject(String name) {
-}
-
-@Agent(description = "Find information from wikipedia according to the user's request.")
+@Agent(description = "Find information from wikipedia according to the user's request.",
+        version = "1.0.0",
+        beanName = "wikiAgent")
 public class WikiAgent {
 
     private final int wordCount;
